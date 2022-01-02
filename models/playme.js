@@ -17,6 +17,6 @@ export async function addNewRequest(title, artist, user) {
 }
 
 export async function deleteAllRequests() {
-    const data = await query(`DELETE * FROM requests;`);
+    const data = await query(`DELETE FROM requests;`);
     return data.rows;
 }

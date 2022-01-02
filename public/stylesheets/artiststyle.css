@@ -37,6 +37,8 @@
      justify-items: center;
  }
 
+
+
   th {
       text-align: center;
       color: var(--background-color);
@@ -60,10 +62,15 @@
   }
 
   th, td {
-      padding: 1em;
+      padding: 0.5em;
   }
   
   #delete-button {
-     height: 8vh;
+     height: 7vh;
      max-width: auto;
+  }
+
+  #delete-all-btn {
+    display: grid;
+    justify-items: center;
   }

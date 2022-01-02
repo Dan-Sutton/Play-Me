@@ -3,7 +3,7 @@ import { fileURLToPath } from "url";
 import path, { dirname } from "path";
 import cookieParser from "cookie-parser";
 import logger from "morgan";
-import {getRequests, getRequestById, addNewRequest} from "./models/playme.js"
+import {getRequests, getRequestById, addNewRequest, deleteAllRequests} from "./models/playme.js"
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -37,6 +37,10 @@ app.post("/requests", (req, res) => {
   const newRequest = req.body;
   const addRequest = addNewRequest(newRequest.title, newRequest.artist, newRequest.user)
   res.json({success: true, payload: { title: newRequest.title, artist: newRequest.artist, user: newRequest.user }})
+})
+
+app.delete("/requests", (req, res)=> {
+  deleteAllRequests()
 })
 
 export default app;
