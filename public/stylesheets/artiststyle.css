@@ -1,0 +1,69 @@
+:root {
+    --background-color: #232946;
+    --white: #FFFFFE;
+    --pink: #EEBBC3;
+    --yellow: #F1E510;
+  }
+  
+  html {
+    background-color: var(--background-color);
+    
+  }
+
+  @font-face {
+    font-family: "boorsok";
+    src: url("../fonts/borsok-font/boorsok.ttf");
+  }
+
+  #artist-head {
+    display: grid;
+    justify-items: center;
+  }
+
+  h1 {
+    font-family: boorsok;
+    color: var(--white);
+    font-size: auto;
+  }
+
+  h2 {
+      font-family: boorsok;
+      color: var(--white);
+      font-size: 11vw;
+  }
+
+ #table {
+     display: grid;
+     justify-items: center;
+ }
+
+  th {
+      text-align: center;
+      color: var(--background-color);
+      font-family: 'Poppins', sans-serif;
+      font-weight: bold;
+      background-color: var(--pink);
+      font-size: auto;
+  }
+
+  td {
+    text-align: center;
+    color: var(--background-color);
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--white);
+    font-size: auto;
+  }
+
+  table, th, td {
+      border: 0.5vh solid var(--background-color);
+      border-collapse: collapse;
+  }
+
+  th, td {
+      padding: 1em;
+  }
+  
+  #delete-button {
+     height: 8vh;
+     max-width: auto;
+  }
