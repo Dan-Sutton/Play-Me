@@ -1,10 +1,10 @@
 import pg from "pg";
 
 const pool = new pg.Pool({
-    user: "okivoojshprklv",
-    host: "ec2-54-217-232-239.eu-west-1.compute.amazonaws.com",
-    database: "da7ujsjbt65fs9",
-    password: "4234c851c7bc0f7c4958834829ddd320adcbeb831e0760156ca3f9500707fc70",
+    user: "gqhmovcdplgssz",
+    host: "ec2-52-208-221-89.eu-west-1.compute.amazonaws.com",
+    database: "d5fh1urss5hlkb",
+    password: "4bbe8910bd49ed433832dd6aa26e2118d70b0de6ec9d10dce5962e4f30731617",
     port: "5432",
     ssl: { rejectUnauthorized: false }
   });
