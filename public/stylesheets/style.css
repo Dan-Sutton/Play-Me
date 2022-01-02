@@ -57,7 +57,7 @@ input {
   margin-top: 8%;
 }
 
-button {
+#submit {
   background-color: var(--yellow);
   width: 50vw;
   height: 7vh;

@@ -1,72 +1,41 @@
 const url = "http://localhost:3000";
 
-const catsSection = document.querySelector("#cats");
-const getCatsButton = document.querySelector("#get-cats");
-const submitButton = document.querySelector("button[type='submit']");
+const inputRequestCode = document.querySelector("#request-code");
+const songTitle = document.querySelector("#song-title");
+const artistName = document.querySelector("#artist-name");
+const yourName = document.querySelector("#your-name");
+const submitBtn = document.querySelector("#submit");
 
-submitButton.addEventListener("click", handleSubmit);
-getCatsButton.addEventListener("click", handleClick);
+
+submitBtn.addEventListener("click", handleSubmit)
 
 function handleSubmit(event) {
   event.preventDefault();
-  addCatInfo();
+  addRequest();
 }
 
-async function addCatInfo() {
+async function addRequest() {
   console.log(gatherFormData());
-  const response = await fetch(`${url}/cats`, {
+  const response = await fetch(`${url}/requests`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(gatherFormData()),
   });
   const data = await response.json();
   console.log(data);
+  inputRequestCode.value = "";
+  songTitle.value = "";
+  artistName.value = "";
+  yourName.value = "";
 }
 
 function gatherFormData() {
-  const catName = document.querySelector("#catName").value;
-  const humanName = document.querySelector("#humanName").value;
-  const hobby = document.querySelector("#hobby").value;
+  const title = songTitle.value;
+  const artist = artistName.value;
+  const user = yourName.value;
   return {
-    catName,
-    humanName,
-    hobby,
+    title,
+    artist,
+    user,
   };
 }
-
-function handleClick(event) {
-  event.preventDefault();
-  getCats();
-}
-
-async function getCats() {
-  const response = await fetch(`${url}/cats`);
-  const { payload } = await response.json();
-  catsSection.innerHTML = "";
-  console.log(payload);
-  payload.forEach(renderCat);
-}
-
-function renderCat(cat) {
-  const name = cat.name;
-  const human = cat.human;
-  const hobby = cat.hobby
-  const article = createCatArticle(name, human, hobby);
-  catsSection.appendChild(article);
-}
-
-function createCatArticle(catName, humanName, hobby) {
-  const article = document.createElement("article");
-  const h2CatName = document.createElement("h2");
-  h2CatName.innerText = `Cat name: ${catName}`;
-  const h3HumanName = document.createElement("h3");
-  h3HumanName.innerText = `Human servant: ${humanName}`;
-  const h3Hobby = document.createElement("h3");
-  h3Hobby.innerText = `Favorite hobby: ${hobby}`;
-  article.appendChild(h2CatName);
-  article.appendChild(h3HumanName);
-  article.appendChild(h3Hobby);
-  return article;
-}
-
-getCats();

@@ -13,18 +13,24 @@
   <body>
 
     <img src="images/logo.png" alt="Play Me logo">
+
     <h1>Play Me!</h1>
 
-    <div class="user-input">
-      <input type="text" id="request-code" placeholder="REQUEST CODE">
-      <input type="text" placeholder="SONG TITLE">
-      <input type="text" placeholder="ARTIST NAME">
-      <input type="text" placeholder="YOUR NAME">
-    </div>
+    <form>
+      <div class="user-input">
+        <input type="text" id="request-code" placeholder="REQUEST CODE" required>
+        <input type="text" id="song-title" placeholder="SONG TITLE" required>
+        <input type="text" id="artist-name" placeholder="ARTIST NAME" required>
+        <input type="text" id="your-name" placeholder="YOUR NAME">
+      </div>
 
-    <div id="submit-btn">
-      <button>SUBMIT</button>
-    </div>
+      <div id="submit-btn">
+        <input type=submit id="submit" placeholder="SUBMIT">
+      </div>
+    </form>
+    
+
+   
     
     <div class="login">
       <a href="" id="artist-login">ARTIST LOGIN</a>
@@ -34,6 +40,6 @@
     <footer>
       <a href="">How to use</a>
     </footer>
-    <script src="/js/main.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
