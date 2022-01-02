@@ -3,10 +3,17 @@ const url = "http://localhost:3000";
 
 
 const deleteAllBtn = document.querySelector("#delete-all");
-const deleteRowBtn = document.querySelector("a");
 
+async function deleteRow(id) {
+    const confirmDelete = confirm("Are you sure you want to Delete this request?")
 
-
+    if (confirmDelete) {
+        location.reload();
+        await fetch(`${url}/requests/${id}`, {
+            method: "DELETE"
+          });
+        }
+}
 
 
 
@@ -56,7 +63,7 @@ function handleClick(event) {
       newTitle.innerText = title;
       newArtist.innerText = artist;
       newUsername.innerText = username;
-      deleteButton.innerHTML = `<a href="index.html" id="${id}"><img src="./images/delete-button.png" alt="Delete Button" id="delete-button"></a>`;
+      deleteButton.innerHTML = `<a href="artist.html" onclick="deleteRow(${id})"><img src="./images/delete-button.png" alt="Delete Button" id="delete-button"></a>`;
 
 
 

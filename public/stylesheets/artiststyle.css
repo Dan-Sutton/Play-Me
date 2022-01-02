@@ -3,6 +3,7 @@
     --white: #FFFFFE;
     --pink: #EEBBC3;
     --yellow: #F1E510;
+    --red: #E3386A;
   }
   
   html {
@@ -77,9 +78,24 @@
   #delete-button {
      height: 7vh;
      max-width: auto;
+     
   }
 
   #delete-all-btn {
     display: grid;
     justify-items: center;
+  }
+
+  #delete-all {
+    background-color: var(--red);
+    border: none;
+    margin-top: 20%;
+    padding: 2%;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 5vw;
   }

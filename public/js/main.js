@@ -14,8 +14,11 @@ function handleSubmit(event) {
   const requestCodeValue = inputRequestCode.value
   if (requestCodeValue === "1234") {
     addRequest();
+    inputRequestCode.value = ""
+    inputRequestCode.setAttribute("placeholder", "REQUEST CODE")
   } else {
-    alert("Wrong request number!")
+    inputRequestCode.value = ""
+    inputRequestCode.setAttribute("placeholder", "**INCORRECT CODE!**")
   }
 
 }

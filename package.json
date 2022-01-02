@@ -8,7 +8,8 @@
     "dev": "nodemon ./bin/www.js",
     "createTable": "node db/scripts/createTable.js",
     "populateTable": "node db/scripts/populateTable.js",
-    "deleteRequests": "node db/scripts/deleteAllRequests.js"
+    "deleteRequests": "node db/scripts/deleteAllRequests.js",
+    "createAccountsTable": "node db/scripts/createAccountsTable.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
