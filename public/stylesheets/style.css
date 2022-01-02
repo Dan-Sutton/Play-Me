@@ -3,6 +3,7 @@
   --white: #FFFFFE;
   --pink: #EEBBC3;
   --yellow: #F1E510;
+  --light-blue: #B8C1EC;
 }
 
 html {
@@ -44,6 +45,7 @@ input {
   font-weight: bold;
   font-size: 110%;
   color: var(--background-color);
+  background-color: var(--light-blue);
 }
 
 ::placeholder { 
@@ -100,4 +102,16 @@ a {
   font-weight: bold;
   font-size: 10vw;
   margin-bottom: 10%;
+}
+
+footer {
+  background-color: var(--light-blue);
+  width: 100wv;
+  margin-bottom: 0px;
+  margin-top: 10%;
+  display: grid;
+  justify-items: center;
+  margin-left: 0px;
+  margin-right: 0px;
+  border-color: var(--light-blue);
 }

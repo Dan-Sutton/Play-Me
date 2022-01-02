@@ -26,6 +26,12 @@
     font-size: auto;
   }
 
+  #request-code {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: var(--white);
+  }
+
   h2 {
       font-family: boorsok;
       color: var(--white);
@@ -37,6 +43,9 @@
      justify-items: center;
  }
 
+ table {
+     width: 100vw;
+ }
 
 
   th {

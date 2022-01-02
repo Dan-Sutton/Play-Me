@@ -11,7 +11,13 @@ submitBtn.addEventListener("click", handleSubmit)
 
 function handleSubmit(event) {
   event.preventDefault();
-  addRequest();
+  const requestCodeValue = inputRequestCode.value
+  if (requestCodeValue === "1234") {
+    addRequest();
+  } else {
+    alert("Wrong request number!")
+  }
+
 }
 
 async function addRequest() {
@@ -27,6 +33,7 @@ async function addRequest() {
   songTitle.value = "";
   artistName.value = "";
   yourName.value = "";
+  
 }
 
 function gatherFormData() {

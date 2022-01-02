@@ -20,3 +20,8 @@ export async function deleteAllRequests() {
     const data = await query(`DELETE FROM requests;`);
     return data.rows;
 }
+
+export async function deleteById(id) {
+    const data = await query(`DELETE FROM requests WHERE id = $1`, [id]);
+    return data.rows;
+}

@@ -3,7 +3,7 @@ import { fileURLToPath } from "url";
 import path, { dirname } from "path";
 import cookieParser from "cookie-parser";
 import logger from "morgan";
-import {getRequests, getRequestById, addNewRequest, deleteAllRequests} from "./models/playme.js"
+import {getRequests, getRequestById, addNewRequest, deleteAllRequests, deleteById} from "./models/playme.js"
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -28,8 +28,8 @@ app.get("/requests", async (req,res) => {
 
 app.get("/requests/:id", async (req, res) => {
   const id = Number(req.params.id);
-  const foundCat = await getRequestById(id);
-  res.json({success: true, payload: foundCat});  
+  const foundReq = await getRequestById(id);
+  res.json({success: true, payload: foundReq});  
 })
 
 
@@ -41,6 +41,13 @@ app.post("/requests", (req, res) => {
 
 app.delete("/requests", (req, res)=> {
   deleteAllRequests()
+})
+
+app.delete("/requests/:id", async (req, res) => {
+  const id = Number(req.params.id);
+  const foundReq = await deleteById(id);
+  res.json({success: true, payload: foundReq});  
+  
 })
 
 export default app;
