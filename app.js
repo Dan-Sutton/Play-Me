@@ -4,6 +4,9 @@ import path, { dirname } from "path";
 import cookieParser from "cookie-parser";
 import logger from "morgan";
 import {getRequests, getRequestById, addNewRequest, deleteAllRequests, deleteById} from "./models/playme.js"
+import { getUsers, getUserByName, addNewUser, deleteUserById } from "./models/checkUsers.js";
+
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -49,5 +52,33 @@ app.delete("/requests/:id", async (req, res) => {
   res.json({success: true, payload: foundReq});  
   
 })
+
+//REQUESTING USERS
+
+
+app.get("/users", async (req,res) => {
+  const users = await getUsers()
+  res.json({success: true, message: "All Requests", payload: users})
+})
+
+app.get("/users/:username", async (req, res) => {
+  const username = req.params.username;
+  const foundUser = await getUserByName(username);
+  res.json({success: true, payload: foundUser});  
+})
+
+app.post("/users", (req, res) => {
+  const newUser = req.body;
+  const addUser = addNewUser(newUser.username, newUser.password)
+  res.json({success: true, payload: { username: newUser.username, password: newUser.password}})
+})
+
+app.delete("/users/:id", async (req, res) => {
+  const id = Number(req.params.id);
+  const foundUser = await deleteUserById(id);
+  res.json({success: true, payload: foundUser});  
+  
+})
+
 
 export default app;

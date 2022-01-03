@@ -9,7 +9,7 @@
     "createTable": "node db/scripts/createTable.js",
     "populateTable": "node db/scripts/populateTable.js",
     "deleteRequests": "node db/scripts/deleteAllRequests.js",
-    "createAccountsTable": "node db/scripts/createAccountsTable.js"
+    "createUsersTable": "node db/scripts/createUsersTable.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",

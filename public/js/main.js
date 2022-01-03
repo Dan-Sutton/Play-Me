@@ -9,6 +9,11 @@ const submitBtn = document.querySelector("#submit");
 
 submitBtn.addEventListener("click", handleSubmit)
 
+
+function handleLogin(){
+  alert("Login!")
+}
+
 function handleSubmit(event) {
   event.preventDefault();
   const requestCodeValue = inputRequestCode.value
@@ -16,6 +21,7 @@ function handleSubmit(event) {
     addRequest();
     inputRequestCode.value = ""
     inputRequestCode.setAttribute("placeholder", "REQUEST CODE")
+    alert("Request Successful!")
   } else {
     inputRequestCode.value = ""
     inputRequestCode.setAttribute("placeholder", "**INCORRECT CODE!**")
