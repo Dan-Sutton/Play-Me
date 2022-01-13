@@ -1,15 +1,14 @@
 import pg from "pg";
 
 const pool = new pg.Pool({
-    user: "gqhmovcdplgssz",
-    host: "ec2-52-208-221-89.eu-west-1.compute.amazonaws.com",
-    database: "d5fh1urss5hlkb",
-    password: "4bbe8910bd49ed433832dd6aa26e2118d70b0de6ec9d10dce5962e4f30731617",
-    port: "5432",
-    ssl: { rejectUnauthorized: false }
-  });
+  user: "wsdstjjrkxynlf",
+  host: "ec2-54-216-159-235.eu-west-1.compute.amazonaws.com",
+  database: "d640b7lo4vaj7m",
+  password: "c585ceb272af2a00798b911c827e5b992820789386ff4257180fc03aec7c9ef9",
+  port: "5432",
+  ssl: { rejectUnauthorized: false },
+});
 
-export default function query(text, params){
-    return pool.query(text, params)
+export default function query(text, params) {
+  return pool.query(text, params);
 }
-
